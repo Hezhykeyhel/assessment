@@ -30,14 +30,14 @@ const DeleteModal = ({
         <div className="flex gap-3">
           <button
             onClick={onCancel}
-            className="flex-1 px-4 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+            className="flex-1 px-4 py-3 border cursor-pointer border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
             data-testid="cancel-delete-button"
           >
             Cancel
           </button>
           <button
             onClick={onConfirm}
-            className="flex-1 px-4 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors"
+            className="flex-1 px-4 py-3 bg-red-600 cursor-pointer text-white rounded-lg font-medium hover:bg-red-700 transition-colors"
             data-testid="confirm-delete-button"
           >
             Delete

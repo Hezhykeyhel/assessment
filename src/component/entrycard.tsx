@@ -19,6 +19,7 @@ const EntryCard = ({
       onTouchStart={() => setShowActions(true)}
       onMouseEnter={() => setShowActions(true)}
       onMouseLeave={() => setShowActions(false)}
+      // data-testid="entry-card"
       data-testid="entry-card"
     >
       {entry.image && (
@@ -49,14 +50,14 @@ const EntryCard = ({
           >
             <button
               onClick={() => onEdit(entry)}
-              className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+              className="p-2 text-blue-600 cursor-pointer hover:bg-blue-50 rounded-lg transition-colors"
               data-testid="edit-button"
             >
               <Edit2 size={18} />
             </button>
             <button
               onClick={() => onDelete(entry.id)}
-              className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+              className="p-2 text-red-600 cursor-pointer hover:bg-red-50 rounded-lg transition-colors"
               data-testid="delete-button"
             >
               <Trash2 size={18} />

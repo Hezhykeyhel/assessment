@@ -41,14 +41,14 @@ const FormModal = ({
 
   return (
     <div className="fixed inset-0 bg-auto bg-opacity-30 backdrop-blur-sm z-40 flex items-end md:items-center justify-center p-0 md:p-4">
-      <div className="bg-white w-full md:max-w-2xl md:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto animate-slide-up">
+      <div className="bg-white w-full md:max-w-2xl md:rounded-2xl shadow-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto animate-slide-up">
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-900">
             {entry ? "Edit Entry" : "New Knowledge Entry"}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-lg"
+            className="p-2 hover:bg-gray-100 cursor-pointer rounded-lg"
           >
             <X size={24} />
           </button>
@@ -105,7 +105,7 @@ const FormModal = ({
                       setImagePreview(null);
                       setFormData({ ...formData, image: null });
                     }}
-                    className="absolute top-2 right-2 p-2 bg-red-500 text-white rounded-full hover:bg-red-600"
+                    className="absolute top-2 cursor-pointer right-2 p-2 bg-red-500 text-white rounded-full hover:bg-red-600"
                   >
                     <X size={16} />
                   </button>
@@ -131,7 +131,7 @@ const FormModal = ({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+              className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 cursor-pointer rounded-lg font-medium hover:bg-gray-50 transition-colors"
             >
               Cancel
             </button>
@@ -143,7 +143,7 @@ const FormModal = ({
                 !formData.title.trim() ||
                 !formData.description.trim()
               }
-              className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               data-testid="submit-button"
             >
               {isSubmitting ? "Saving..." : entry ? "Update" : "Create"}

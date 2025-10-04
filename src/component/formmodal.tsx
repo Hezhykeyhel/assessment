@@ -40,23 +40,23 @@ const FormModal = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-auto bg-opacity-30 backdrop-blur-sm z-40 flex items-end md:items-center justify-center p-0 md:p-4">
-      <div className="bg-white w-full md:max-w-2xl md:rounded-2xl shadow-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto animate-slide-up">
-        <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-          <h2 className="text-xl font-bold text-gray-900">
+    <div className="fixed inset-0 border-b backdrop-blur-md z-40 flex items-end md:items-center justify-center p-0 md:p-4">
+      <div className="w-full bg-opacity-10 border-2 border-gray-200 md:max-w-2xl md:rounded-2xl rounded-t-2xl max-h-[90vh] overflow-y-auto animate-slide-up">
+        <div className="sticky top-0  border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+          <h2 className="text-xl font-bold text-gray-400">
             {entry ? "Edit Entry" : "New Knowledge Entry"}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 cursor-pointer rounded-lg"
+            className="p-2 hover:bg-gray-100 rounded-lg"
           >
-            <X size={24} />
+            <X size={24} color="white" />
           </button>
         </div>
 
         <div className="p-6 space-y-6" data-testid="entry-form">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-400 mb-2">
               Title *
             </label>
             <input
@@ -65,14 +65,14 @@ const FormModal = ({
               onChange={(e) =>
                 setFormData({ ...formData, title: e.target.value })
               }
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-3 text-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="e.g., Machine calibration procedure"
               data-testid="title-input"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-400 mb-2">
               Description *
             </label>
             <textarea
@@ -81,14 +81,14 @@ const FormModal = ({
                 setFormData({ ...formData, description: e.target.value })
               }
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              className="w-full px-4 py-3 border text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
               placeholder="Detailed steps and observations..."
               data-testid="description-input"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-400 mb-2">
               Photo (Optional)
             </label>
             <div className="flex flex-col gap-4">
@@ -113,14 +113,14 @@ const FormModal = ({
               )}
               <label className="flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
                 <Camera size={20} className="text-gray-400" />
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-gray-400">
                   {imagePreview ? "Change Photo" : "Add Photo"}
                 </span>
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleImageChange}
-                  className="hidden"
+                  className="hidden text-white"
                   data-testid="image-input"
                 />
               </label>
@@ -131,7 +131,7 @@ const FormModal = ({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 cursor-pointer rounded-lg font-medium hover:bg-gray-50 transition-colors"
+              className="flex-1 px-6 py-3 border border-gray-300 text-gray-400 cursor-pointer rounded-lg font-medium hover:bg-gray-50 transition-colors"
             >
               Cancel
             </button>
@@ -143,7 +143,7 @@ const FormModal = ({
                 !formData.title.trim() ||
                 !formData.description.trim()
               }
-              className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-6 py-3 bg-blue-400 text-white rounded-lg cursor-pointer font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               data-testid="submit-button"
             >
               {isSubmitting ? "Saving..." : entry ? "Update" : "Create"}

@@ -15,11 +15,10 @@ const EntryCard = ({
 
   return (
     <div
-      className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all hover:shadow-md"
+      className="bg-opacity-20 backdrop-blur-md rounded-xl shadow-lg border border-white border-opacity-30 overflow-hidden transition-all hover:shadow-xl hover:bg-opacity-30"
       onTouchStart={() => setShowActions(true)}
       onMouseEnter={() => setShowActions(true)}
       onMouseLeave={() => setShowActions(false)}
-      // data-testid="entry-card"
       data-testid="entry-card"
     >
       {entry.image && (
@@ -31,12 +30,12 @@ const EntryCard = ({
       )}
       <div className="p-4">
         <h3
-          className="font-semibold text-gray-900 mb-2 line-clamp-2"
+          className="font-semibold text-gray-400 mb-2 line-clamp-2"
           data-testid="entry-title"
         >
           {entry.title}
         </h3>
-        <p className="text-sm text-gray-600 line-clamp-3 mb-3">
+        <p className="text-sm text-gray-500 line-clamp-3 mb-3">
           {entry.description}
         </p>
         <div className="flex items-center justify-between">

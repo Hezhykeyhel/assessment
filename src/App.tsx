@@ -55,7 +55,7 @@ type Entry = {
   createdAt: string;
 };
 
-export default function KnowledgeCaptureApp() {
+export default function App() {
   const [entries, setEntries] = useState<Entry[]>([]);
   const [filteredEntries, setFilteredEntries] = useState<Entry[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -150,18 +150,16 @@ export default function KnowledgeCaptureApp() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm">
+      <header className="bg-opacity-10 backdrop-blur-sm sticky top-0 z-30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            Knowledge Base
-          </h1>
+          <h1 className="text-2xl font-bold text-white mb-4">Knowledge Base</h1>
 
           {/* Search Bar */}
           <div className="relative">
             <Search
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-300"
               size={20}
             />
             <input
@@ -169,13 +167,12 @@ export default function KnowledgeCaptureApp() {
               placeholder="Search entries..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-3 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:bg-opacity-30"
               data-testid="search-input"
             />
           </div>
         </div>
       </header>
-
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-6 pb-24">
         {loading ? (

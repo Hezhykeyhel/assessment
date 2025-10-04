@@ -1,6 +1,6 @@
-# 📱 Manufacturing Knowledge Capture Interface
+# 📱 Manufacturing Assessment Interface
 
-A mobile-first knowledge capture application built for manufacturing technicians to document, search, and manage their technical knowledge entries with ease.
+A mobile-first Assessment application built for manufacturing technicians to document, search, and manage their technical knowledge entries with ease.
 
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue)
@@ -249,7 +249,7 @@ The application includes 5 comprehensive E2E tests:
 ```typescript
 import { test, expect } from "@playwright/test";
 
-test.describe("Knowledge Capture App", () => {
+test.describe("Assessment App", () => {
   test("should add a new entry", async ({ page }) => {
     await page.goto("http://localhost:5173");
     await page.click('[data-testid="add-button"]');
@@ -322,7 +322,7 @@ App.tsx
 ├── DeleteModal Component        # Confirmation dialog
 ├── EntryCard Component         # Individual entry display
 ├── FormModal Component         # Create/Edit form
-└── KnowledgeCaptureApp        # Main container
+└── Assessment        # Main container
     ├── State Management
     ├── API Integration
     └── Event Handlers
@@ -353,7 +353,7 @@ App.tsx
 - Image upload with preview
 - Form validation
 
-#### 5. **KnowledgeCaptureApp (Main)**
+#### 5. **Assessment (Main)**
 - Manages global state
 - Handles API calls
 - Implements search functionality

@@ -48,7 +48,7 @@ const mockApiService = {
 
 // Main App Component
 type Entry = {
-  id: any;
+  id: string | number;
   title: string;
   description: string;
   image: string | null;
@@ -145,7 +145,7 @@ export default function KnowledgeCaptureApp() {
     setShowForm(true);
   };
 
-  const initiateDelete = (entry: React.SetStateAction<null>) => {
+  const initiateDelete = (entry: Entry) => {
     setDeleteConfirm(entry);
   };
 
